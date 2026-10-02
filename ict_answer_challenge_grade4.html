@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ICT Written Answer Challenge – Grade 4</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#071428;--card:#0f2444;--line:#1e4a7a;--cy:#35e0ff;--gr:#4dff9d;--yl:#ffd84d;--rd:#ff6b7a;--tx:#eaf4ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Segoe UI',Tahoma,Arial,sans-serif;color:var(--tx);background:var(--bg) repeating-linear-gradient(0deg,transparent 0 38px,#0d2342 38px 39px),repeating-linear-gradient(90deg,transparent 0 38px,#0d2342 38px 39px)}
+.fl{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.fl span{position:absolute;font-size:2rem;opacity:.18;animation:fl 14s linear infinite}
+@keyframes fl{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-20vh) rotate(360deg)}}
+main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:18px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 0 24px #35e0ff22}
+h1{margin:6px 0;font-size:2rem;color:var(--cy);text-shadow:0 0 14px #35e0ff88;text-align:center}
+h2{font-size:1.25rem;line-height:1.4;margin:8px 0 14px}
+.sub{text-align:center;color:var(--yl);font-weight:700;margin-bottom:14px}
+.ico{font-size:2.2rem;text-align:center;letter-spacing:8px}
+label{font-weight:700;display:block;margin:14px 0 6px}
+input.nm{width:100%;font-size:1.4rem;padding:14px;border-radius:12px;border:2px solid var(--cy);background:#06101f;color:var(--tx)}
+select{width:100%;padding:10px;border-radius:10px;background:#06101f;color:var(--tx);border:2px solid var(--line);font-size:1rem}
+textarea{width:100%;min-height:110px;font-size:1.05rem;padding:12px;border-radius:12px;border:2px solid var(--line);background:#06101f;color:var(--tx);font-family:inherit}
+textarea:focus,input:focus{outline:none;border-color:var(--cy)}
+button{font-family:inherit;cursor:pointer}
+.big{display:block;width:100%;margin-top:18px;padding:16px;font-size:1.4rem;font-weight:800;border:0;border-radius:14px;background:linear-gradient(90deg,var(--gr),var(--cy));color:#032;box-shadow:0 0 18px #4dff9d66}
+.big:hover{transform:scale(1.02)}
+.btn{padding:11px 18px;border-radius:12px;border:0;font-weight:700;font-size:1rem;margin:10px 8px 0 0;background:var(--cy);color:#032}
+.btn.g{background:var(--gr)}.btn.o{background:transparent;border:2px solid var(--cy);color:var(--cy)}
+.err{color:var(--rd);font-weight:700;min-height:1.4em;margin-top:6px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;margin-bottom:8px;color:var(--cy)}
+.bar{height:12px;background:#06101f;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:14px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gr),var(--cy));transition:width .5s}
+.tag{display:inline-block;background:#143a66;color:var(--yl);padding:4px 12px;border-radius:20px;font-weight:700;font-size:.85rem}
+.hint{color:#9fc4ee;margin:4px 0 8px}
+.chips,.pool,.seq{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.seq{min-height:54px;border:2px dashed var(--line);border-radius:12px;padding:8px}
+.chip{padding:9px 14px;border-radius:22px;border:2px solid var(--line);background:#0b1c36;color:var(--tx);font-size:1rem}
+.chip.on{background:#0e5a7a;border-color:var(--cy);box-shadow:0 0 10px #35e0ff88}
+.sample{background:#0b1c36;border-left:5px solid var(--yl);padding:12px;border-radius:8px;margin:8px 0;font-style:italic}
+.bl{width:150px;display:inline-block;margin:0 4px;padding:6px 10px;font-size:1.05rem;border-radius:8px;border:2px solid var(--cy);background:#06101f;color:var(--tx)}
+.fb{margin-top:16px;padding:14px;border-radius:14px;background:#0a1f3a;border:2px solid var(--gr);animation:pop .4s}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.bd{display:inline-block;margin:4px 6px 4px 0;padding:6px 12px;border-radius:20px;font-weight:700;background:#124d2f;border:1px solid var(--gr);animation:pop .5s}
+.bd.m{background:#4a2330;border-color:var(--rd)}
+.mod{background:#0b1c36;border-radius:10px;padding:10px;margin-top:8px}
+.big2{font-size:1.3rem;font-weight:800;color:var(--yl);margin-bottom:6px}
+</style></head><body>
+<div class="fl" id="fl"></div>
+<main id="app"></main>
+<script>
+const D=[
+// ---------- WEEK 1 ----------
+{w:1,t:'K',q:"Which device is used to discover coins under the ground?",x:["Satellite","Drone","GPS"],m:"A ground penetrating radar is used to discover coins and other things under the ground.",k:[["Ground penetrating radar","ground.?penetrating|radar|gpr"],["discover / detect","discover|detect|find|search"],["under the ground","under|buried|ground|coins"]]},
+{w:1,t:'C',q:"Complete the answer: what depends on satellites to determine the places of things?",x:"The Ground ___ System (GPS) depends on satellites to determine the places of things.",m:"The Ground Positioning System (GPS) depends on satellites.",k:[["Positioning","positioning|gps"]]},
+{w:1,t:'W',q:"What can you use to take photos (for example, of places from above)?",m:"A drone can be used to take photos.",k:[["Drone","drone"],["photos","photo|picture|image|camera"],["from the air / above","air|above|fly|sky"]]},
+{w:1,t:'B',q:"Build the perfect answer: how can you discover magnetic things buried under the ground?",x:["You can use","a magnetometer","to discover","magnetic things","buried under the ground","a drone"],m:"You can use a magnetometer to discover magnetic things buried under the ground.",k:[["Magnetometer","magnetometer"],["magnetic things / metals","magnetic|metal"],["under the ground","under|buried|ground"]]},
+{w:1,t:'S',q:"The Ground Positioning System (GPS) depends on what to determine places and locations?",x:{s:"GPS depends on a device to find places and locations.",o:["Satellite","Magnetometer","Drone"]},m:"The GPS depends on satellites to determine places and locations.",k:[["Satellite","satellite"],["GPS","gps|positioning"],["places and locations","place|location"]]},
+{w:1,t:'O',q:"Which device can you use to determine things under the ground? Explain in your own words.",m:"Ground penetrating radar is used to determine (detect) things under the ground.",k:[["Ground penetrating radar","ground.?penetrating|radar|gpr"],["things under the ground","under|buried|ground"],["determine / detect","determin|detect|discover|find|locat"]]},
+{w:1,t:'W',q:"Classroom task: using the internet, how do you search for a program that determines places?",m:"Open a web browser, search the internet for a program that determines places (such as GPS or a maps program), and open it.",k:[["internet / browser","internet|browser|chrome|search"],["program (GPS / maps)","program|gps|map"],["places / location","place|location"]]},
+{w:1,t:'W',q:"Classroom task: how do you use the program to determine the location of a tourist place you want to visit?",m:"Open the GPS/maps program, type the name of the tourist place in the search box, and the program shows its location on the map.",k:[["open the program","open|run|start"],["type / search the name","type|search|write|name"],["tourist place","tourist|place|pyramid"],["location on the map","location|map|show"]]},
+{w:1,t:'C',q:"Homework: complete the answer.",x:"The Ground Positioning System (GPS) depends on ___ to determine places and locations.",m:"The GPS depends on satellites.",k:[["Satellite","satellite"]]},
+{w:1,t:'K',q:"Homework: archaeologists depend on which device to search for metals under the ground?",x:["Drone","Photography","GPS"],m:"Archaeologists depend on a magnetometer to search for metals under the ground.",k:[["Magnetometer","magnetometer"],["archaeologists","archaeolog"],["metals","metal|magnetic"]]},
+// ---------- WEEK 2 ----------
+{w:2,t:'K',q:"Which device is used to output sounds from the computer?",x:["Microphone","Keyboard","Printer"],m:"A speech synthesizer (speaker) is used to output sounds from the computer.",k:[["Speech synthesizer / speaker","speech synthes|speaker"],["output","output|out"],["sounds","sound|voice|speech"]]},
+{w:2,t:'C',q:"Complete the answer: which output unit displays data, photos and videos?",x:"The ___ is used to display data, photos and videos.",m:"The screen is used to display data, photos and videos.",k:[["Screen","screen|monitor"]]},
+{w:2,t:'K',q:"Which one of these is an input unit? Explain what it does.",x:["Screen","Printer","Speech synthesizer"],m:"A microphone is an input unit; it enters sound into the computer.",k:[["Microphone","microphone"],["input unit","input|enter"],["sound","sound|voice"]]},
+{w:2,t:'W',q:"Which device is used to help nonverbal people use the computer?",m:"A speech synthesizer helps nonverbal people (who cannot speak) to use the computer.",k:[["Speech synthesizer","speech synthes"],["nonverbal people","nonverbal|non.?verbal|cannot speak|can't speak|not speak|talk"],["use the computer","computer|use|voice|sound"]]},
+{w:2,t:'S',q:"What helps blind people to use the computer?",x:{s:"A special device helps blind people to use the computer.",o:["Braille terminal","Mouse","Printer"]},m:"A braille terminal helps blind people to use the computer.",k:[["Braille terminal","braille"],["blind people","blind"],["use the computer","computer|use"]]},
+{w:2,t:'I',q:"Improve this weak answer: what is used to enter text and photos from paper to the computer?",x:"It is something that copies things.",m:"A scanner is used to enter text and photos from paper into the computer.",k:[["Scanner","scanner"],["text and photos","text|photo|image|picture"],["from paper","paper"]]},
+{w:2,t:'W',q:"Classroom task: how do you search the internet for an image of a computer component and save it on the computer?",m:"Open a browser, search the internet for an image of a computer component such as a mouse, right-click the image, choose Save image as, and save it on the computer.",k:[["search the internet","internet|browser|search|google"],["image of a component","image|picture|photo|mouse|keyboard|screen"],["right-click","right|click"],["save on the computer","save"]]},
+{w:2,t:'C',q:"Homework: complete the answer.",x:"The keyboard is used to enter ___ and numbers to the computer.",m:"The keyboard is used to enter letters and numbers.",k:[["Letters","letters|text|characters"]]},
+{w:2,t:'C',q:"Homework: complete the answer.",x:"A ___ terminal allows blind people to use the computer.",m:"A braille terminal allows blind people to use the computer.",k:[["Braille","braille"]]},
+// ---------- WEEK 3 ----------
+{w:3,t:'K',q:"Which component receives data from the operating system?",x:["Keyboard","Screen","Word program"],m:"The central processing unit (CPU) receives data from the operating system.",k:[["Central processing unit (CPU)","cpu|central processing"],["data","data"],["operating system","operating"]]},
+{w:3,t:'C',q:"Complete the answer: an example of an operating system.",x:"___ is considered one of the operating systems.",m:"Windows is considered one of the operating systems.",k:[["Windows","windows"]]},
+{w:3,t:'O',q:"How does the operating system interact with the central processing unit (CPU) when it receives data?",m:"The operating system receives data from the user and sends it to the CPU, which processes it. Then the operating system receives the results from the CPU and displays them on the screen.",k:[["operating system","operating system|windows"],["CPU","cpu|central processing"],["data","data|information"],["processes / sends","process|send|pass|transfer"],["displays on screen","screen|display|show"]]},
+{w:3,t:'O',q:"Define the operating system and give an example.",m:"The operating system is the essential program that runs and controls the computer and its devices. An example is Windows.",k:[["essential program","program|software|essential"],["runs / controls the computer","run|control|manage|operate"],["example (Windows)","windows|android|linux|ios|macos"]]},
+{w:3,t:'B',q:"Build the perfect answer: which program is used to type and format text and insert photos?",x:["The Word program","is used to","type and format text","and insert photos","Google Chrome","PowerPoint"],m:"The Word program is used to type and format text and insert photos.",k:[["Word","word"],["type / format text","type|format|text"],["insert photos","photo|image|picture"]]},
+{w:3,t:'W',q:"What is the program used to write and format text and insert images?",m:"Microsoft Word.",k:[["Microsoft Word","word"],["write / format text","text|write|format|type"],["insert images","image|photo|picture"]]},
+{w:3,t:'K',q:"Which is one of the essential programs needed to run the computer?",x:["Google Chrome","Microsoft Word","PowerPoint"],m:"The operating system is one of the essential programs to run the computer.",k:[["Operating system","operating"],["essential","essential|important|main"],["run the computer","run|computer|work"]]},
+{w:3,t:'O',q:"What is the importance of the operating system (such as Windows) for the computer?",m:"The operating system is essential to run the computer. It controls the devices, receives data and sends it to the CPU, lets us use other programs, and displays results on the screen. Without it the computer cannot work.",k:[["essential to run the computer","run|essential|work|operate"],["controls devices","control|manage|hardware|devices"],["data and CPU","data|cpu|send|receive"],["runs programs","program|apps|application"],["displays on the screen","screen|display"]]},
+{w:3,t:'C',q:"Complete the answer: the job of the CPU.",x:"The central processing unit (CPU) is used to process ___.",m:"The CPU is used to process data.",k:[["Data","data"]]},
+{w:3,t:'S',q:"The operating system receives what from the CPU, then displays it on the screen?",x:{s:"The operating system receives something from the CPU and displays it on the screen.",o:["Information","Keyboard","Mouse"]},m:"The operating system receives information from the CPU and then displays it on the screen.",k:[["Information","information|result|data"],["CPU","cpu|central"],["screen","screen|display"]]},
+{w:3,t:'W',q:"What is the program used to browse the internet?",m:"A web browser such as Google Chrome.",k:[["Web browser (Google Chrome)","browser|chrome|edge|firefox"],["internet","internet|web"]]},
+{w:3,t:'W',q:"What is the component responsible for processing and controlling data inside the computer?",m:"The central processing unit (CPU).",k:[["CPU","cpu|central processing"],["processing","process"],["controlling data","control|data"]]},
+{w:3,t:'W',q:"Classroom task: how do you search the internet for the logo of an operating system and save the image?",m:"Open a browser, search the internet for the logo of an operating system such as Windows, choose the image, right-click it and save the image on the computer.",k:[["search the internet","internet|browser|search|google"],["logo","logo"],["operating system (Windows…)","windows|android|operating|linux|mac"],["save the image","save"]]},
+{w:3,t:'K',q:"Homework: which application is one of the programs used to browse the internet?",x:["Windows","PowerPoint","Word"],m:"Google Chrome is one of the programs used to browse the internet.",k:[["Google Chrome","chrome"],["browse the internet","browse|internet|web"]]},
+{w:3,t:'C',q:"Homework: complete the answer.",x:"The ___ Processing Unit (CPU) is responsible for controlling and processing data.",m:"The Central Processing Unit (CPU) is responsible for controlling and processing data.",k:[["Central","central"]]},
+{w:3,t:'O',q:"Mention the program used to browse the internet and explain its main function.",m:"Google Chrome (a web browser) is used to browse the internet. Its main function is to open websites and search for information.",k:[["Google Chrome / web browser","chrome|browser|edge|firefox"],["open websites","website|web page|site|open"],["search for information","search|information|find"]]},
+{w:3,t:'I',q:"Improve this weak answer: which part processes and controls data in the computer, and what is its importance?",x:"It is a part inside the computer.",m:"The CPU (central processing unit) processes and controls data. It is the brain of the computer, and the computer cannot work without it.",k:[["CPU","cpu|central processing"],["processes / controls data","process|control|data"],["importance (brain / works)","brain|important|work|essential|instructions"]]}
+];
+const TN={W:'✍️ Write the Answer',K:'🧩 Keyword Builder',C:'📝 Complete the Answer',B:'🧱 Build the Perfect Answer',S:'🔎 Spot the Missing Keyword',I:'🛠️ Improve the Answer',O:'💬 Explain in Your Own Words'};
+const $=s=>document.querySelector(s), app=$('#app');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const sh=a=>a.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
+let Q=[],i=0,name='',got=new Set(),st={};
+$('#fl').innerHTML=['🖥️','⌨️','☁️','🌐','</>','💾','📡','🛰️','🖱️','🖨️'].map((e,j)=>`<span style="left:${j*10+2}%;animation-delay:-${j*1.4}s;animation-duration:${12+j}s">${e}</span>`).join('');
+
+function start(){
+ app.innerHTML=`<div class=card><div class=ico>🖥️ 🛰️ 🌐 ⌨️</div><h1>ICT Written Answer Challenge</h1>
+ <div class=sub>ENG.NIHAL BADAWY<br>Grade 4 • Cyber Answer Quest</div>
+ <label for=nm>Student Name:</label><input class=nm id=nm placeholder="Type your name here" autocomplete=off>
+ <label for=ws>Choose your missions:</label><select id=ws><option value=0>All weeks (Week 1 – Week 3)</option><option value=1>Week 1 – Finding Places &amp; Hidden Things</option><option value=2>Week 2 – Input &amp; Output Devices</option><option value=3>Week 3 – Operating System, CPU &amp; Programs</option></select>
+ <div class=err id=er></div><button class=big id=go>🚀 START CHALLENGE</button></div>`;
+ $('#go').onclick=()=>{const n=$('#nm').value.trim();if(!n){$('#er').textContent='⚠️ Please enter your name first!';$('#nm').focus();return}
+  name=n;const w=+$('#ws').value;Q=D.filter(d=>!w||d.w==w);i=0;got=new Set();render()};
+ $('#nm').onkeydown=e=>{if(e.key=='Enter')$('#go').click()};
+}
+function render(){
+ if(i>=Q.length)return end();
+ const it=Q[i];st={sel:[],seq:[],spot:null};
+ let h=`<div class=card><div class=top><span>👤 ${esc(name)}</span><span>Mission ${i+1} / ${Q.length}</span></div><div class=bar><i style="width:${i/Q.length*100}%"></i></div>
+ <span class=tag>Week ${it.w} • ${TN[it.t]}</span><h2>${esc(it.q)}</h2>`;
+ if(it.t=='K'){st.ch=sh([...it.k.map(k=>k[0]),...it.x]);h+=`<div class=hint>Tap the keywords a strong answer needs, then write your answer:</div><div class=chips>${st.ch.map((c,j)=>`<button class=chip data-j=${j}>${esc(c)}</button>`).join('')}</div>`}
+ if(it.t=='C')h+=`<div class=sample style="font-style:normal">${it.x.split('___').map((p,j,a)=>esc(p)+(j<a.length-1?`<input class=bl data-j=${j} placeholder="type here">`:'')).join('')}</div>`;
+ if(it.t=='B'){st.pool=sh(it.x);h+=`<div class=hint>Tap the cards to build your answer (tap a placed card to remove it):</div><div class=seq id=seq></div><div class=pool id=pool></div>`}
+ if(it.t=='S')h+=`<div class=hint>Here is a sample answer:</div><div class=sample>${esc(it.x.s)}</div><div class=big2>Which important keyword is missing?</div><div class=chips>${sh(it.x.o).map(o=>`<button class="chip sp" data-o="${esc(o)}">${esc(o)}</button>`).join('')}</div><div class=hint>Now improve the answer by adding it:</div>`;
+ if(it.t=='I')h+=`<div class=hint>Weak student answer:</div><div class=sample>${esc(it.x)}</div><div class=hint>Rewrite it using the correct ICT terminology:</div>`;
+ if(!['C','B'].includes(it.t))h+=`<textarea id=ans placeholder="Write your answer here..."></textarea>`;
+ h+=`<div class=err id=er></div><button class="btn g" id=ck>⚡ Check My Answer</button><div id=fb></div></div>`;
+ app.innerHTML=h;window.scrollTo(0,0);
+ document.querySelectorAll('.chip[data-j]').forEach(b=>b.onclick=()=>{b.classList.toggle('on');const c=st.ch[b.dataset.j];st.sel=st.sel.includes(c)?st.sel.filter(x=>x!=c):[...st.sel,c]});
+ document.querySelectorAll('.sp').forEach(b=>b.onclick=()=>{document.querySelectorAll('.sp').forEach(x=>x.classList.remove('on'));b.classList.add('on');st.spot=b.dataset.o});
+ if(it.t=='B')drawB();
+ $('#ck').onclick=check;
+}
+function drawB(){
+ $('#seq').innerHTML=st.seq.map((c,j)=>`<button class="chip on" data-s=${j}>${esc(c)}</button>`).join('');
+ $('#pool').innerHTML=st.pool.filter(c=>!st.seq.includes(c)).map(c=>`<button class=chip data-p="${esc(c)}">${esc(c)}</button>`).join('');
+ document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{st.seq.splice(+b.dataset.s,1);drawB()});
+ document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{st.seq.push(st.pool.find(c=>esc(c)==b.dataset.p));drawB()});
+}
+function check(){
+ const it=Q[i];let txt='';
+ if(it.t=='C')txt=[...document.querySelectorAll('.bl')].map(b=>b.value).join(' ');
+ else if(it.t=='B')txt=st.seq.join(' ');
+ else txt=$('#ans').value;
+ const er=$('#er');
+ if(it.t=='S'&&!st.spot)return er.textContent='⚠️ Pick the missing keyword first!';
+ if(!txt.trim())return er.textContent='⚠️ Write something first – give it a try!';
+ er.textContent='';
+ const f=it.k.filter(k=>new RegExp(k[1],'i').test(txt)),mi=it.k.filter(k=>!f.includes(k));
+ f.forEach(k=>got.add(k[0]));
+ let msg=!mi.length?'🏆 Strong Answer! ⚡ Excellent ICT Vocabulary!':f.length?'💡 Good start! You unlocked some concepts – look for the rest below.':'🔍 Not yet – study the keywords below and try again!';
+ let ex='';
+ if(it.t=='S')ex+=`<p>${st.spot==it.k[0][0]?'🔓 Yes! The missing keyword is <b>'+esc(it.k[0][0])+'</b>.':'🔁 The missing keyword was <b>'+esc(it.k[0][0])+'</b>.'}</p>`;
+ if(it.t=='K'){const bad=st.sel.filter(c=>!it.k.some(k=>k[0]==c));if(bad.length)ex+=`<p>🤔 Not needed in this answer: ${bad.map(esc).join(', ')}</p>`}
+ $('#fb').innerHTML=`<div class=fb><div class=big2>${msg}</div>${ex}
+ ${f.map(k=>`<span class=bd>⭐ Keyword Found! ${esc(k[0])}</span>`).join('')}
+ ${mi.length?`<div style="margin-top:8px">🔓 Missing keywords:</div>`+mi.map(k=>`<span class="bd m">🔑 ${esc(k[0])}</span>`).join(''):''}
+ <div class=mod><b>Model answer:</b> ${esc(it.m)}</div>
+ <button class="btn o" id=rt>↩️ Try again</button><button class="btn g" id=nx>${i==Q.length-1?'🏁 Finish':'Next mission ➜'}</button></div>`;
+ $('#rt').onclick=()=>{$('#fb').innerHTML=''};
+ $('#nx').onclick=()=>{i++;render()};
+ $('#fb').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function end(){
+ app.innerHTML=`<div class=card><div class=ico>🏆 🎉 💡</div><h1>Mission Complete, ${esc(name)}!</h1>
+ <div class=sub>You finished every written-answer mission. Great ICT thinking!</div>
+ <div class=hint>Your unlocked ICT keyword collection:</div>
+ <div>${[...got].map(k=>`<span class=bd>🔓 ${esc(k)}</span>`).join('')||'<span class=hint>Keep practising to unlock keywords!</span>'}</div>
+ <p class=hint>Tip: use these exact curriculum words in your written exam answers.</p>
+ <button class=big id=again>🔁 Play Again</button></div>`;
+ $('#again').onclick=start;
+}
+start();
+</script></body></html>
